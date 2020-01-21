@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
  *  Leading icon size can be 20dp 
  * 
  */
-
+///[Dont forget to provide the key in the scaffold]
+///[Custom SnackBar]
 /*
     EXAMPLE:
 
@@ -33,6 +34,21 @@ import 'package:flutter/material.dart';
             ),
             )
         )
+*/
+
+/// [Normal SnackBar]
+
+/*
+  fluentBody: Button(
+          ontap: () {
+            FluentSnackBar.fluentSnackBar(
+              context,
+              content: 'SnackBar',
+              duration: Duration(seconds: 2),
+            );
+          },
+          text: 'SnackBar',
+        ),
 */
 
 class FluentSnackBar {

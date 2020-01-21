@@ -1,5 +1,28 @@
 import 'package:flutter/material.dart';
 
+///[List of widgets is required] which can be any things but it is
+///recommeded to use [ListTile]
+
+/*
+  FluentBottomSheet.bottomSheet(
+              context,
+              listTile: [
+                ListTile(
+                  leading: Icon(FluentIcons.delete),
+                  title: Text('Delete',style: Theme.of(context).textTheme.subhead,),
+                ),
+                 ListTile(
+                  leading: Icon(FluentIcons.device),
+                  title: Text('Devices',style: Theme.of(context).textTheme.subhead,),
+                ),
+                 ListTile(
+                  leading: Icon(FluentIcons.print),
+                  title: Text('Printer',style: Theme.of(context).textTheme.subhead,),
+                ),
+              ],
+            );
+*/
+
 class FluentBottomSheet {
   static void bottomSheet(BuildContext context,
       {@required List<Widget> listTile}) {

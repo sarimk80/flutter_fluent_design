@@ -150,7 +150,7 @@ abstract class FluentThemeData {
 
   static ThemeData orangeTheme() {
     ThemeData orangeData = ThemeData(
-      iconTheme: IconThemeData(color: Colors.black),
+      iconTheme: IconThemeData(color: Colors.white,size: 20),
       bottomAppBarTheme: BottomAppBarTheme(color: Colors.white, elevation: 5),
       brightness: Brightness.light,
       primaryColor: Color(0xffda3b01),
@@ -215,7 +215,7 @@ abstract class FluentThemeData {
 
   static ThemeData purpleTheme() {
     ThemeData orangeData = ThemeData(
-      iconTheme: IconThemeData(color: Colors.black),
+      iconTheme: IconThemeData(color: Colors.white,size: 20),
       bottomAppBarTheme: BottomAppBarTheme(color: Colors.white, elevation: 5),
       brightness: Brightness.light,
       primaryColor: Color(0xff5c2e91),
@@ -280,7 +280,7 @@ abstract class FluentThemeData {
 
   static ThemeData pinkTheme() {
     ThemeData orangeData = ThemeData(
-      iconTheme: IconThemeData(color: Colors.black),
+      iconTheme: IconThemeData(color: Colors.white,size: 20),
       bottomAppBarTheme: BottomAppBarTheme(color: Colors.white, elevation: 5),
       brightness: Brightness.light,
       primaryColor: Color(0xffe3008c),

@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: FluentThemeData.blueTheme(),
+      theme: FluentThemeData.purpleTheme(),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -30,9 +30,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: FluentSnackBar.globalKey,
-      appBar: AppBarLayout(
+      body: AppBarLayout(
         title: 'App Bar Title',
-        searchBar: true,
         action: <Widget>[
           Padding(
             padding: EdgeInsets.all(5),
@@ -49,8 +48,55 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: EdgeInsets.all(8),
           ),
         ],
+        fluentBody: Button(
+          ontap: () {
+            FluentBottomSheet.bottomSheet(
+              context,
+              listTile: [
+                ListTile(
+                  leading: Icon(FluentIcons.delete),
+                  title: Text(
+                    'Delete',
+                    style: Theme.of(context).textTheme.subhead,
+                  ),
+                ),
+                ListTile(
+                  leading: Icon(FluentIcons.device),
+                  title: Text(
+                    'Devices',
+                    style: Theme.of(context).textTheme.subhead,
+                  ),
+                ),
+                ListTile(
+                  leading: Icon(FluentIcons.print),
+                  title: Text(
+                    'Printer',
+                    style: Theme.of(context).textTheme.subhead,
+                  ),
+                ),
+              ],
+            );
+          },
+          text: 'SnackBar',
+        ),
       ),
-      body: Center(),
+      bottomNavigationBar: BottomNavigation(
+        currentIndex: 0,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(FluentIcons.home),
+            title: Text('Home'),
+          ),
+           BottomNavigationBarItem(
+            icon: Icon(FluentIcons.guest_user),
+            title: Text('User'),
+          ),
+           BottomNavigationBarItem(
+            icon: Icon(FluentIcons.settings),
+            title: Text('Setting'),
+          ),
+        ],
+      ),
     );
   }
 }

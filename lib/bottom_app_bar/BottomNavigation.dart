@@ -1,12 +1,34 @@
 import 'package:flutter/material.dart';
 
+///[Example]
+
+/*
+    BottomNavigation(
+        currentIndex: 0,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(FluentIcons.home),
+            title: Text('Home'),
+          ),
+           BottomNavigationBarItem(
+            icon: Icon(FluentIcons.guest_user),
+            title: Text('User'),
+          ),
+           BottomNavigationBarItem(
+            icon: Icon(FluentIcons.settings),
+            title: Text('Setting'),
+          ),
+        ],
+      ),
+*/
+
 class BottomNavigation extends StatefulWidget {
   final List<BottomNavigationBarItem> items;
   final int currentIndex;
   final Function(int) onTap;
 
   const BottomNavigation(
-      {Key key, @required this.items,@required this.currentIndex, this.onTap})
+      {Key key, @required this.items, @required this.currentIndex, this.onTap})
       : super(key: key);
 
   @override
@@ -39,8 +61,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         unselectedItemColor: Colors.black.withOpacity(0.3),
         selectedItemColor: Theme.of(context).accentColor,
         backgroundColor: Theme.of(context).bottomAppBarTheme.color,
-        items:  widget.items,
-        
+        items: widget.items,
       ),
     );
   }

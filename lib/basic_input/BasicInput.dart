@@ -1,5 +1,15 @@
 import 'package:flutter/material.dart';
 
+/// [ontap] and [text] is required
+/*
+
+  fluentBody: Button(
+          ontap: () {},
+          text: 'SnackBar',
+        ),
+
+*/
+
 class Button extends StatefulWidget {
   final String text;
   final Function() ontap;

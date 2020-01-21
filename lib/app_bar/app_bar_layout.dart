@@ -3,24 +3,78 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../fluent_design.dart';
+
+///EXAMPLE OF [Fluent App Bar]
+
+/// Change the value of [snap] and [pinned] between [true] or [false]
+/// to have different app bar result
+/// Appbar [title] and [fluentBody] is required
+
+/*
+   
+   Scaffold(
+      key: FluentSnackBar.globalKey,
+      body: AppBarLayout(
+        title: 'App Bar Title',
+        searchBar: true,
+        snap: true,
+        action: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(5),
+          ),
+          Icon(
+            FluentIcons.all_apps,
+            size: Theme.of(context).iconTheme.size,
+          ),
+          Padding(
+            padding: EdgeInsets.all(8),
+          ),
+          Icon(FluentIcons.add, size: Theme.of(context).iconTheme.size),
+          Padding(
+            padding: EdgeInsets.all(8),
+          ),
+        ],
+        fluentBody: ListView.builder(
+          itemBuilder: (context, index) {
+            return ListTile(
+              onTap: (){},
+              leading: Text(
+                index.toString(),
+              ),
+              title: Text("Fluent $index"),
+            );
+          },
+        ),
+      ),
+    );
+
+*/
+
 class AppBarLayout extends StatefulWidget implements PreferredSizeWidget {
   final String title;
   final List<Widget> action;
   final bool searchBar;
   final Widget leading;
+  final bool pinned;
+  final bool snap;
+  final Widget fluentBody;
 
   AppBarLayout(
       {@required this.title,
+      @required this.fluentBody,
       this.action,
       this.searchBar = false,
-      this.leading});
+      this.leading,
+      this.pinned = true,
+      this.snap = false});
 
   @override
   _AppBarLayoutState createState() => _AppBarLayoutState();
 
   @override
-  Size get preferredSize => Size(AppBar().preferredSize.width,
-      AppBar().preferredSize.height + AppBar().preferredSize.height + 18);
+  Size get preferredSize =>
+      Size(AppBar().preferredSize.width, AppBar().preferredSize.height);
 }
 
 class _AppBarLayoutState extends State<AppBarLayout> {
@@ -29,93 +83,76 @@ class _AppBarLayoutState extends State<AppBarLayout> {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
         statusBarColor: Theme.of(context).primaryColor,
         statusBarIconBrightness: Theme.of(context).brightness));
-
-    return PreferredSize(
-      preferredSize: widget.preferredSize,
-      child: SafeArea(
-        child: Column(
-          children: <Widget>[
-            AppBar(
-                backgroundColor: Theme.of(context).primaryColor,
-                title: Text(
-                  widget.title,
-                  style: Theme.of(context).textTheme.title,
-                ),
-                leading: widget.leading,
-                actions: widget.action),
-            widget.searchBar
-                ? AppBar(
-                    backgroundColor: Theme.of(context).primaryColor,
-                    elevation: 0.5,
-                    centerTitle: true,
-                    title: Container(
-                      width: MediaQuery.of(context).size.width - 10,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: <Widget>[
-                            Icon(
-                              FluentIcons.zoom,
-                              size: 20,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 20),
-                            ),
-                            Text(
-                              "Search",
-                              style: Theme.of(context).textTheme.subtitle,
-                            ),
-                          ],
+    return NestedScrollView(
+      headerSliverBuilder: (context, expanded) {
+        return [
+          SliverAppBar(
+            pinned: widget.pinned,
+            floating: widget.snap,
+            snap: widget.snap,
+            leading: widget.leading,
+            title: Text(
+              widget.title,
+              style: Theme.of(context).textTheme.title,
+            ),
+            actions: widget.action,
+            backgroundColor: Theme.of(context).primaryColor,
+            bottom: widget.searchBar
+                ? PreferredSize(
+                    preferredSize: widget.preferredSize,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.black.withOpacity(0.1),
+                          backgroundBlendMode: BlendMode.multiply,
+                          borderRadius: BorderRadius.circular(8),
                         ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.1),
-                        backgroundBlendMode: BlendMode.multiply,
-                        borderRadius: BorderRadius.circular(8),
+                        height: 40,
+                        width: MediaQuery.of(context).size.width - 10,
+                        child: Padding(
+                          padding: EdgeInsets.all(8),
+                          child: TextField(
+                            decoration: InputDecoration(
+                              labelText: 'Search',
+                              labelStyle: Theme.of(context).textTheme.subtitle,
+                              disabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 0,
+                                    color: Theme.of(context).primaryColor),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 0,
+                                    color: Theme.of(context).primaryColor),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 0,
+                                    color: Theme.of(context).primaryColor),
+                              ),
+                              prefixIcon: Icon(
+                                FluentIcons.zoom,
+                                size: Theme.of(context).iconTheme.size,
+                                color: Theme.of(context).iconTheme.color,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   )
-                : Container(
-                    width: 0,
-                    height: 0,
+                : PreferredSize(
+                    preferredSize: Size(0, 0),
+                    child: Container(),
                   ),
-//            Container(
-//              width: MediaQuery.of(context).size.width,
-//              color: Theme.of(context).primaryColor,
-//              child: Padding(
-//                padding: const EdgeInsets.all(5.0),
-//                child: DefaultTabController(
-//                  length: 2,
-//                  child: TabBar(
-//                    indicatorWeight: 0,
-//                    indicator: BoxDecoration(
-//                      border: Border.all(
-//                          color: Theme.of(context).primaryColor, width: 5),
-//                      color: Colors.white,
-//                      borderRadius: BorderRadius.all(
-//                        Radius.circular(50),
-//                      ),
-//                    ),
-//                    isScrollable: true,
-//                    unselectedLabelColor: Colors.white,
-//                    labelColor: Theme.of(context).primaryColor,
-//                    tabs: [
-//                      Tab(
-//                        child: Text("focused"),
-//                      ),
-//                      Tab(
-//                        child: Text(
-//                          "Other",
-//                        ),
-//                      ),
-//                    ],
-//                  ),
-//                ),
-//              ),
-//            ),
-          ],
-        ),
-      ),
+          ),
+        ];
+      },
+      body: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: Center(child: widget.fluentBody)),
     );
   }
 }
