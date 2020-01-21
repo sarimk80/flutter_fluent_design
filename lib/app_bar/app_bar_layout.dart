@@ -84,6 +84,7 @@ class _AppBarLayoutState extends State<AppBarLayout> {
         statusBarColor: Theme.of(context).primaryColor,
         statusBarIconBrightness: Theme.of(context).brightness));
     return NestedScrollView(
+      physics: NeverScrollableScrollPhysics(),
       headerSliverBuilder: (context, expanded) {
         return [
           SliverAppBar(
@@ -152,7 +153,7 @@ class _AppBarLayoutState extends State<AppBarLayout> {
       body: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          child: Center(child: widget.fluentBody)),
+          child: widget.fluentBody),
     );
   }
 }

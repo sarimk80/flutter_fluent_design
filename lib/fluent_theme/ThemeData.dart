@@ -10,7 +10,7 @@ abstract class FluentThemeData {
   static ThemeData blueTheme() {
     ThemeData blueData = ThemeData(
       //Icon Themes
-      iconTheme: IconThemeData(color: Colors.black, size: 20),
+      iconTheme: IconThemeData(color: Colors.white, size: 20),
       //Bottom Sheet Theme
       bottomAppBarTheme: BottomAppBarTheme(color: Colors.white, elevation: 5),
 

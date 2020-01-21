@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fluent_design/fluent_design.dart';
 
+import 'src/FluentAppBar.dart';
+import 'src/AvatarView.dart' as avatar;
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -10,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: FluentThemeData.purpleTheme(),
+      theme: FluentThemeData.blueTheme(),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -26,77 +29,88 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  List<String> titles = [
+    'AppBarLayout',
+    'AvatarView',
+    'ButtonInput',
+    'BottomNavigation',
+    'BottomSheet',
+    'CalenderView',
+    'DateTimePicker',
+    'Drawer',
+    'ListItemView',
+    'PeoplePickerView',
+    'PersonaChipView',
+    'PersonaView',
+    'PopupMenu',
+    'Progress',
+    'Snackbar',
+    'TemplateView',
+    'Tooltip',
+    'Typography'
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: FluentSnackBar.globalKey,
       body: AppBarLayout(
+        searchBar: true,
+        snap: true,
         title: 'App Bar Title',
-        action: <Widget>[
-          Padding(
-            padding: EdgeInsets.all(5),
-          ),
-          Icon(
-            FluentIcons.all_apps,
-            size: Theme.of(context).iconTheme.size,
-          ),
-          Padding(
-            padding: EdgeInsets.all(8),
-          ),
-          Icon(FluentIcons.add, size: Theme.of(context).iconTheme.size),
-          Padding(
-            padding: EdgeInsets.all(8),
-          ),
-        ],
-        fluentBody: Button(
-          ontap: () {
-            FluentBottomSheet.bottomSheet(
-              context,
-              listTile: [
-                ListTile(
-                  leading: Icon(FluentIcons.delete),
-                  title: Text(
-                    'Delete',
-                    style: Theme.of(context).textTheme.subhead,
-                  ),
-                ),
-                ListTile(
-                  leading: Icon(FluentIcons.device),
-                  title: Text(
-                    'Devices',
-                    style: Theme.of(context).textTheme.subhead,
-                  ),
-                ),
-                ListTile(
-                  leading: Icon(FluentIcons.print),
-                  title: Text(
-                    'Printer',
-                    style: Theme.of(context).textTheme.subhead,
-                  ),
-                ),
-              ],
+        fluentBody: ListView.separated(
+          padding: EdgeInsets.all(0),
+          separatorBuilder: (context, index) {
+            return Divider();
+          },
+          itemBuilder: (context, index) {
+            return ListTile(
+              onTap: () {
+                switch (index) {
+                  case 0:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FluentAppBar(),
+                      ),
+                    );
+                    break;
+                  case 1:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => avatar.AvatarView(),
+                      ),
+                    );
+                    break;
+                }
+              },
+              title: Text(
+                titles[index],
+                style: Theme.of(context).textTheme.subhead,
+              ),
             );
           },
-          text: 'SnackBar',
+          itemCount: titles.length,
         ),
       ),
-      bottomNavigationBar: BottomNavigation(
-        currentIndex: 0,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(FluentIcons.home),
-            title: Text('Home'),
-          ),
-           BottomNavigationBarItem(
-            icon: Icon(FluentIcons.guest_user),
-            title: Text('User'),
-          ),
-           BottomNavigationBarItem(
-            icon: Icon(FluentIcons.settings),
-            title: Text('Setting'),
-          ),
-        ],
-      ),
+      // bottomNavigationBar: BottomNavigation(
+      //   currentIndex: 0,
+      //   items: [
+      //     BottomNavigationBarItem(
+      //       icon: Icon(FluentIcons.home),
+      //       title: Text('Home'),
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(FluentIcons.guest_user),
+      //       title: Text('User'),
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(FluentIcons.settings),
+      //       title: Text('Setting'),
+      //     ),
+      //   ],
+      // ),
     );
   }
 }
