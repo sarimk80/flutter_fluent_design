@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluent_design/fluent_design.dart';
 
 import 'src/FluentAppBar.dart';
-import 'src/AvatarView.dart' as avatar;
+import 'src/FlutterAvatarView.dart';
 
 void main() => runApp(MyApp());
 
@@ -79,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => avatar.AvatarView(),
+                        builder: (context) => FlutterAvatarView(),
                       ),
                     );
                     break;

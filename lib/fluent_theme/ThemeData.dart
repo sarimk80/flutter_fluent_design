@@ -47,6 +47,12 @@ abstract class FluentThemeData {
             fontWeight: FontWeight.w400,
             fontSize: 25,
             fontFamily: 'packages/fluent_design/Segoe'),
+            display2: TextStyle(
+              color: Colors.black,
+            fontWeight: FontWeight.w300,
+            fontSize: 20,
+            fontFamily: 'packages/fluent_design/Segoe'
+            ),
         headline: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.w700,
