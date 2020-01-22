@@ -1,3 +1,4 @@
+import 'package:fluent/src/FluentDrawer.dart';
 import 'package:fluent/src/FlutterBottomNavigation.dart';
 import 'package:fluent/src/FlutterBottomSheet.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: FluentThemeData.darkTheme(AccentColor.greenAccent),
+      theme: FluentThemeData.lightTheme(accentColor: AccentColor.greenAccent),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -118,6 +119,22 @@ class _MyHomePageState extends State<MyHomePage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => FluentCalender(),
+                      ),
+                    );
+                    break;
+                  case 6:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FluentCalender(),
+                      ),
+                    );
+                    break;
+                  case 7:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FluentDrawer(),
                       ),
                     );
                     break;

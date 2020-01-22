@@ -103,7 +103,7 @@ abstract class FluentThemeData {
 
   */
 
-  static ThemeData lightTheme(Color accentColor) {
+  static ThemeData lightTheme({@required Color accentColor}) {
     ThemeData lightData = ThemeData(
       disabledColor: Colors.black.withOpacity(0.5),
       //Light Theme
@@ -538,7 +538,7 @@ abstract class FluentThemeData {
 
   */
 
-  static ThemeData darkTheme(Color accentColor) {
+  static ThemeData darkTheme({@required Color accentColor}) {
     ThemeData darkData = ThemeData(
       primaryIconTheme: IconThemeData(color: Colors.white, size: 20),
       disabledColor: Colors.white.withOpacity(0.5),
