@@ -1,8 +1,13 @@
+import 'package:fluent/src/FlutterBottomNavigation.dart';
+import 'package:fluent/src/FlutterBottomSheet.dart';
 import 'package:flutter/material.dart';
 import 'package:fluent_design/fluent_design.dart';
 
 import 'src/FluentAppBar.dart';
 import 'src/FlutterAvatarView.dart';
+import 'src/FlutterButton.dart';
+import 'src/FluentCalender.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -82,6 +87,33 @@ class _MyHomePageState extends State<MyHomePage> {
                         builder: (context) => FlutterAvatarView(),
                       ),
                     );
+                    break;
+                  case 2:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FlutterButton(),
+                      ),
+                    );
+                    break;
+                  case 3:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FlutterBottomNavigation(),
+                      ),
+                    );
+                    break;
+                  case 4:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FlutterBottomSheet(),
+                      ),
+                    );
+                    break;
+                  case 5:
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>FluentCalender(),),);
                     break;
                 }
               },

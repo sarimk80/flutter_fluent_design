@@ -25,14 +25,14 @@ import 'package:flutter/material.dart';
 
 class FluentBottomSheet {
   static void bottomSheet(BuildContext context,
-      {@required List<Widget> listTile}) {
+      {@required List<Widget> listTile,double height=250}) {
     showModalBottomSheet(
       backgroundColor: Theme.of(context).bottomAppBarTheme.color,
       elevation: Theme.of(context).bottomAppBarTheme.elevation,
       context: context,
       builder: (context) {
         return Container(
-          height: 250,
+          height: height,
           child: ListView(
             shrinkWrap: true,
             physics: ClampingScrollPhysics(),

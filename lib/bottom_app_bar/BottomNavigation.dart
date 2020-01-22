@@ -25,7 +25,7 @@ import 'package:flutter/material.dart';
 class BottomNavigation extends StatefulWidget {
   final List<BottomNavigationBarItem> items;
   final int currentIndex;
-  final Function(int) onTap;
+  final ValueChanged<int> onTap;
 
   const BottomNavigation(
       {Key key, @required this.items, @required this.currentIndex, this.onTap})
@@ -48,6 +48,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         ),
       ),
       child: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         currentIndex: widget.currentIndex,
         onTap: widget.onTap,
         elevation: Theme.of(context).bottomAppBarTheme.elevation,

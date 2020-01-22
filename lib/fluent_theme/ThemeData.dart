@@ -47,12 +47,21 @@ abstract class FluentThemeData {
             fontWeight: FontWeight.w400,
             fontSize: 25,
             fontFamily: 'packages/fluent_design/Segoe'),
-            display2: TextStyle(
-              color: Colors.black,
+        display2: TextStyle(
+            color: Colors.black,
             fontWeight: FontWeight.w300,
             fontSize: 20,
-            fontFamily: 'packages/fluent_design/Segoe'
-            ),
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display3: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w200,
+            fontSize: 30,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display4: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w100,
+            fontSize: 45,
+            fontFamily: 'packages/fluent_design/Segoe'),
         headline: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.w700,
@@ -94,7 +103,6 @@ abstract class FluentThemeData {
 
   static ThemeData lightTheme() {
     ThemeData lightData = ThemeData(
-
       //Light Theme
       iconTheme: IconThemeData(color: Colors.black, size: 20),
       //Bottom App Bar Themes
@@ -156,7 +164,7 @@ abstract class FluentThemeData {
 
   static ThemeData orangeTheme() {
     ThemeData orangeData = ThemeData(
-      iconTheme: IconThemeData(color: Colors.white,size: 20),
+      iconTheme: IconThemeData(color: Colors.white, size: 20),
       bottomAppBarTheme: BottomAppBarTheme(color: Colors.white, elevation: 5),
       brightness: Brightness.light,
       primaryColor: Color(0xffda3b01),
@@ -221,7 +229,7 @@ abstract class FluentThemeData {
 
   static ThemeData purpleTheme() {
     ThemeData orangeData = ThemeData(
-      iconTheme: IconThemeData(color: Colors.white,size: 20),
+      iconTheme: IconThemeData(color: Colors.white, size: 20),
       bottomAppBarTheme: BottomAppBarTheme(color: Colors.white, elevation: 5),
       brightness: Brightness.light,
       primaryColor: Color(0xff5c2e91),
@@ -286,7 +294,7 @@ abstract class FluentThemeData {
 
   static ThemeData pinkTheme() {
     ThemeData orangeData = ThemeData(
-      iconTheme: IconThemeData(color: Colors.white,size: 20),
+      iconTheme: IconThemeData(color: Colors.white, size: 20),
       bottomAppBarTheme: BottomAppBarTheme(color: Colors.white, elevation: 5),
       brightness: Brightness.light,
       primaryColor: Color(0xffe3008c),

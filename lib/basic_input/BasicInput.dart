@@ -14,12 +14,14 @@ class Button extends StatefulWidget {
   final String text;
   final Function() ontap;
   final bool disable;
+  final double width;
 
   const Button(
       {Key key,
       @required this.text,
       @required this.ontap,
-      this.disable = false})
+      this.disable = false,
+      this.width=90})
       : super(key: key);
 
   @override
@@ -32,7 +34,7 @@ class _ButtonState extends State<Button> {
     return widget.disable
         ? Container(
             color: Colors.grey[300],
-            width: 90,
+            width: widget.width,
             height: 40,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -53,7 +55,7 @@ class _ButtonState extends State<Button> {
               splashColor: Theme.of(context).accentColor,
               onTap: widget.ontap,
               child: Container(
-                width: 90,
+                width: widget.width,
                 height: 40,
                 child: Center(
                   child: Text(
