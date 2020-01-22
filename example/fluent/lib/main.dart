@@ -8,7 +8,6 @@ import 'src/FlutterAvatarView.dart';
 import 'src/FlutterButton.dart';
 import 'src/FluentCalender.dart';
 
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: FluentThemeData.blueTheme(),
+      theme: FluentThemeData.darkTheme(AccentColor.greenAccent),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -66,7 +65,9 @@ class _MyHomePageState extends State<MyHomePage> {
         fluentBody: ListView.separated(
           padding: EdgeInsets.all(0),
           separatorBuilder: (context, index) {
-            return Divider();
+            return Divider(
+              height: 0.5,
+            );
           },
           itemBuilder: (context, index) {
             return ListTile(
@@ -113,7 +114,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                     break;
                   case 5:
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>FluentCalender(),),);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FluentCalender(),
+                      ),
+                    );
                     break;
                 }
               },

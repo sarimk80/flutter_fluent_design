@@ -22,7 +22,7 @@ class _FlutterBottomSheetState extends State<FlutterBottomSheet> {
                 'BottomSheet',
                 style: Theme.of(context).textTheme.display3,
               ),
-              Button(
+              BorderlessInput(
                 width: 200,
                 text: 'Show with Single Line Item',
                 ontap: () {
@@ -30,19 +30,25 @@ class _FlutterBottomSheetState extends State<FlutterBottomSheet> {
                     context,
                     listTile: [
                       ListTile(
-                        leading: Icon(FluentIcons.flag),
+                        leading: Icon(
+                          FluentIcons.flag,
+                          color: Theme.of(context).iconTheme.color,
+                        ),
                         title: Text('Flag'),
                       ),
                       ListTile(
-                        leading: Icon(FluentIcons.forward),
+                        leading: Icon(FluentIcons.forward,
+                            color: Theme.of(context).iconTheme.color),
                         title: Text('Forward'),
                       ),
                       ListTile(
-                        leading: Icon(FluentIcons.share),
+                        leading: Icon(FluentIcons.share,
+                            color: Theme.of(context).iconTheme.color),
                         title: Text('Share'),
                       ),
                       ListTile(
-                        leading: Icon(FluentIcons.delete),
+                        leading: Icon(FluentIcons.delete,
+                            color: Theme.of(context).iconTheme.color),
                         title: Text('Delete'),
                       ),
                     ],
@@ -50,28 +56,32 @@ class _FlutterBottomSheetState extends State<FlutterBottomSheet> {
                 },
               ),
               Button(
-                width: 200,
+                width: 220,
                 text: 'Show with Double Line Item',
                 ontap: () {
                   FluentBottomSheet.bottomSheet(context,
                       listTile: [
                         ListTile(
-                          leading: Icon(FluentIcons.camera),
+                          leading: Icon(FluentIcons.camera,
+                              color: Theme.of(context).iconTheme.color),
                           title: Text('Camera'),
                           subtitle: Text('Take photo with camera'),
                         ),
                         ListTile(
-                          leading: Icon(FluentIcons.photo_2),
+                          leading: Icon(FluentIcons.photo_2,
+                              color: Theme.of(context).iconTheme.color),
                           title: Text('Photo'),
                           subtitle: Text('Photo gallery'),
                         ),
                         ListTile(
-                          leading: Icon(FluentIcons.video),
+                          leading: Icon(FluentIcons.video,
+                              color: Theme.of(context).iconTheme.color),
                           title: Text('Video'),
                           subtitle: Text('Play your video'),
                         ),
                         ListTile(
-                          leading: Icon(FluentIcons.manage),
+                          leading: Icon(FluentIcons.manage,
+                              color: Theme.of(context).iconTheme.color),
                           title: Text('Manage'),
                           subtitle: Text('Manage your files'),
                         ),
@@ -79,8 +89,8 @@ class _FlutterBottomSheetState extends State<FlutterBottomSheet> {
                       height: 280);
                 },
               ),
-              Button(
-                width: 210,
+              BorderlessInput(
+                width: 230,
                 text: 'Show with Single Line Header',
                 ontap: () {
                   FluentBottomSheet.bottomSheet(context,
@@ -91,23 +101,27 @@ class _FlutterBottomSheetState extends State<FlutterBottomSheet> {
                             style: Theme.of(context)
                                 .textTheme
                                 .subhead
-                                .copyWith(color: Colors.black),
+                                
                           ),
                         ),
                         ListTile(
-                          leading: Icon(FluentIcons.camera),
+                          leading: Icon(FluentIcons.camera,
+                              color: Theme.of(context).iconTheme.color),
                           title: Text('Camera'),
                         ),
                         ListTile(
-                          leading: Icon(FluentIcons.photo_2),
+                          leading: Icon(FluentIcons.photo_2,
+                              color: Theme.of(context).iconTheme.color),
                           title: Text('Photo'),
                         ),
                         ListTile(
-                          leading: Icon(FluentIcons.video),
+                          leading: Icon(FluentIcons.video,
+                              color: Theme.of(context).iconTheme.color),
                           title: Text('Video'),
                         ),
                         ListTile(
-                          leading: Icon(FluentIcons.manage),
+                          leading: Icon(FluentIcons.manage,
+                              color: Theme.of(context).iconTheme.color),
                           title: Text('Manage'),
                         ),
                       ],
@@ -115,7 +129,7 @@ class _FlutterBottomSheetState extends State<FlutterBottomSheet> {
                 },
               ),
               Button(
-                width: 300,
+                width: 320,
                 text: 'Show with Double Line Header and Divider',
                 ontap: () {
                   FluentBottomSheet.bottomSheet(context,
@@ -124,6 +138,7 @@ class _FlutterBottomSheetState extends State<FlutterBottomSheet> {
                           leading: Icon(
                             FluentIcons.folder_open,
                             size: 30,
+                            color: Theme.of(context).iconTheme.color
                           ),
                           title: Text(
                             'Folder',
@@ -131,19 +146,23 @@ class _FlutterBottomSheetState extends State<FlutterBottomSheet> {
                           ),
                         ),
                         ListTile(
-                          leading: Icon(FluentIcons.camera),
+                          leading: Icon(FluentIcons.camera,
+                              color: Theme.of(context).iconTheme.color),
                           title: Text('Camera'),
                         ),
                         ListTile(
-                          leading: Icon(FluentIcons.photo_2),
+                          leading: Icon(FluentIcons.photo_2,
+                              color: Theme.of(context).iconTheme.color),
                           title: Text('Photo'),
                         ),
                         ListTile(
-                          leading: Icon(FluentIcons.video),
+                          leading: Icon(FluentIcons.video,
+                              color: Theme.of(context).iconTheme.color),
                           title: Text('Video'),
                         ),
                         ListTile(
-                          leading: Icon(FluentIcons.manage),
+                          leading: Icon(FluentIcons.manage,
+                              color: Theme.of(context).iconTheme.color),
                           title: Text('Manage'),
                         ),
                       ],

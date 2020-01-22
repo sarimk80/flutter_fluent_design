@@ -9,8 +9,10 @@ abstract class FluentThemeData {
 
   static ThemeData blueTheme() {
     ThemeData blueData = ThemeData(
+      primaryIconTheme: IconThemeData(color: Colors.white, size: 20),
+      disabledColor: Colors.black.withOpacity(0.5),
       //Icon Themes
-      iconTheme: IconThemeData(color: Colors.white, size: 20),
+      iconTheme: IconThemeData(color: Colors.black, size: 20),
       //Bottom Sheet Theme
       bottomAppBarTheme: BottomAppBarTheme(color: Colors.white, elevation: 5),
 
@@ -101,8 +103,9 @@ abstract class FluentThemeData {
 
   */
 
-  static ThemeData lightTheme() {
+  static ThemeData lightTheme(Color accentColor) {
     ThemeData lightData = ThemeData(
+      disabledColor: Colors.black.withOpacity(0.5),
       //Light Theme
       iconTheme: IconThemeData(color: Colors.black, size: 20),
       //Bottom App Bar Themes
@@ -111,8 +114,13 @@ abstract class FluentThemeData {
       primaryColor: Colors.white,
       primaryColorDark: Colors.white,
       scaffoldBackgroundColor: Colors.white,
-      accentColor: Color(0xff0078d4),
+      accentColor: accentColor,
       textTheme: TextTheme(
+          button: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontFamily: 'packages/fluent_design/Segoe',
+              fontWeight: FontWeight.w500),
           subhead: TextStyle(
               color: Colors.black,
               fontSize: 16,
@@ -132,6 +140,26 @@ abstract class FluentThemeData {
               color: Colors.black,
               fontSize: 14,
               fontFamily: 'packages/fluent_design/Segoe'),
+          display1: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w400,
+              fontSize: 25,
+              fontFamily: 'packages/fluent_design/Segoe'),
+          display2: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w300,
+              fontSize: 20,
+              fontFamily: 'packages/fluent_design/Segoe'),
+          display3: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w200,
+              fontSize: 30,
+              fontFamily: 'packages/fluent_design/Segoe'),
+          display4: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w100,
+              fontSize: 45,
+              fontFamily: 'packages/fluent_design/Segoe'),
           title: TextStyle(
               color: Colors.black,
               fontSize: 20,
@@ -148,7 +176,7 @@ abstract class FluentThemeData {
               fontSize: 28,
               fontFamily: 'packages/fluent_design/Segoe')),
       appBarTheme: AppBarTheme(
-        elevation: 0,
+        elevation: 1,
         color: Colors.white,
         iconTheme: IconThemeData(color: Colors.black54, size: 24),
       ),
@@ -164,7 +192,9 @@ abstract class FluentThemeData {
 
   static ThemeData orangeTheme() {
     ThemeData orangeData = ThemeData(
-      iconTheme: IconThemeData(color: Colors.white, size: 20),
+      primaryIconTheme: IconThemeData(color: Colors.white, size: 20),
+      disabledColor: Colors.black.withOpacity(0.5),
+      iconTheme: IconThemeData(color: Colors.black, size: 20),
       bottomAppBarTheme: BottomAppBarTheme(color: Colors.white, elevation: 5),
       brightness: Brightness.light,
       primaryColor: Color(0xffda3b01),
@@ -194,6 +224,26 @@ abstract class FluentThemeData {
         body2: TextStyle(
             color: Colors.black,
             fontSize: 14,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display1: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w400,
+            fontSize: 25,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display2: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w300,
+            fontSize: 20,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display3: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w200,
+            fontSize: 30,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display4: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w100,
+            fontSize: 45,
             fontFamily: 'packages/fluent_design/Segoe'),
         title: TextStyle(
             color: Colors.white,
@@ -229,7 +279,9 @@ abstract class FluentThemeData {
 
   static ThemeData purpleTheme() {
     ThemeData orangeData = ThemeData(
-      iconTheme: IconThemeData(color: Colors.white, size: 20),
+      primaryIconTheme: IconThemeData(color: Colors.white, size: 20),
+      disabledColor: Colors.black.withOpacity(0.5),
+      iconTheme: IconThemeData(color: Colors.black, size: 20),
       bottomAppBarTheme: BottomAppBarTheme(color: Colors.white, elevation: 5),
       brightness: Brightness.light,
       primaryColor: Color(0xff5c2e91),
@@ -259,6 +311,26 @@ abstract class FluentThemeData {
         body2: TextStyle(
             color: Colors.black,
             fontSize: 14,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display1: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w400,
+            fontSize: 25,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display2: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w300,
+            fontSize: 20,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display3: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w200,
+            fontSize: 30,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display4: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w100,
+            fontSize: 45,
             fontFamily: 'packages/fluent_design/Segoe'),
         title: TextStyle(
             color: Colors.white,
@@ -294,7 +366,9 @@ abstract class FluentThemeData {
 
   static ThemeData pinkTheme() {
     ThemeData orangeData = ThemeData(
-      iconTheme: IconThemeData(color: Colors.white, size: 20),
+      primaryIconTheme: IconThemeData(color: Colors.white, size: 20),
+      disabledColor: Colors.black.withOpacity(0.5),
+      iconTheme: IconThemeData(color: Colors.black, size: 20),
       bottomAppBarTheme: BottomAppBarTheme(color: Colors.white, elevation: 5),
       brightness: Brightness.light,
       primaryColor: Color(0xffe3008c),
@@ -324,6 +398,26 @@ abstract class FluentThemeData {
         body2: TextStyle(
             color: Colors.black,
             fontSize: 14,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display1: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w400,
+            fontSize: 25,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display2: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w300,
+            fontSize: 20,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display3: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w200,
+            fontSize: 30,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display4: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w100,
+            fontSize: 45,
             fontFamily: 'packages/fluent_design/Segoe'),
         title: TextStyle(
             color: Colors.white,
@@ -359,6 +453,8 @@ abstract class FluentThemeData {
 
   static ThemeData greenTheme() {
     ThemeData orangeData = ThemeData(
+      primaryIconTheme: IconThemeData(color: Colors.white, size: 20),
+      disabledColor: Colors.black.withOpacity(0.5),
       iconTheme: IconThemeData(color: Colors.black, size: 22),
       bottomAppBarTheme: BottomAppBarTheme(color: Colors.white, elevation: 5),
       brightness: Brightness.light,
@@ -389,6 +485,26 @@ abstract class FluentThemeData {
         body2: TextStyle(
             color: Colors.black,
             fontSize: 14,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display1: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w400,
+            fontSize: 25,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display2: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w300,
+            fontSize: 20,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display3: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w200,
+            fontSize: 30,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display4: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w100,
+            fontSize: 45,
             fontFamily: 'packages/fluent_design/Segoe'),
         title: TextStyle(
             color: Colors.white,
@@ -422,14 +538,16 @@ abstract class FluentThemeData {
 
   */
 
-  static ThemeData darkTheme() {
+  static ThemeData darkTheme(Color accentColor) {
     ThemeData darkData = ThemeData(
-      iconTheme: IconThemeData(color: Colors.white),
+      primaryIconTheme: IconThemeData(color: Colors.white, size: 20),
+      disabledColor: Colors.white.withOpacity(0.5),
+      iconTheme: IconThemeData(color: Colors.white, size: 20),
       bottomAppBarTheme:
           BottomAppBarTheme(color: Color(0xff303030), elevation: 5),
       brightness: Brightness.light,
       primaryColor: Color(0xff303030),
-      accentColor: Colors.white,
+      accentColor: accentColor,
       primaryColorDark: Colors.black,
       scaffoldBackgroundColor: Colors.black,
       appBarTheme: AppBarTheme(
@@ -438,6 +556,11 @@ abstract class FluentThemeData {
         iconTheme: IconThemeData(color: Colors.white, size: 24),
       ),
       textTheme: TextTheme(
+        button: TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+            fontFamily: 'packages/fluent_design/Segoe',
+            fontWeight: FontWeight.w300),
         subhead: TextStyle(
             color: Colors.white,
             fontSize: 16,
@@ -456,6 +579,26 @@ abstract class FluentThemeData {
         body2: TextStyle(
             color: Colors.white,
             fontSize: 14,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display1: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w400,
+            fontSize: 25,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display2: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w300,
+            fontSize: 20,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display3: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w200,
+            fontSize: 30,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display4: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w100,
+            fontSize: 45,
             fontFamily: 'packages/fluent_design/Segoe'),
         title: TextStyle(
             color: Colors.white,

@@ -59,7 +59,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
             Theme.of(context).textTheme.subtitle.copyWith(fontSize: 12),
         unselectedLabelStyle:
             Theme.of(context).textTheme.subtitle.copyWith(fontSize: 12),
-        unselectedItemColor: Colors.black.withOpacity(0.3),
+        unselectedItemColor: Theme.of(context).disabledColor,
         selectedItemColor: Theme.of(context).accentColor,
         backgroundColor: Theme.of(context).bottomAppBarTheme.color,
         items: widget.items,

@@ -88,6 +88,8 @@ class _AppBarLayoutState extends State<AppBarLayout> {
       headerSliverBuilder: (context, expanded) {
         return [
           SliverAppBar(
+            elevation: Theme.of(context).appBarTheme.elevation,
+            forceElevated: true,
             pinned: widget.pinned,
             floating: widget.snap,
             snap: widget.snap,
@@ -113,32 +115,50 @@ class _AppBarLayoutState extends State<AppBarLayout> {
                         width: MediaQuery.of(context).size.width - 10,
                         child: Padding(
                           padding: EdgeInsets.all(8),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              labelText: 'Search',
-                              labelStyle: Theme.of(context).textTheme.subtitle,
-                              disabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    width: 0,
-                                    color: Theme.of(context).primaryColor),
+                          child: Row(
+                            children: <Widget>[
+                              Padding(
+                                padding: EdgeInsets.all(8),
                               ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    width: 0,
-                                    color: Theme.of(context).primaryColor),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    width: 0,
-                                    color: Theme.of(context).primaryColor),
-                              ),
-                              prefixIcon: Icon(
+                              Icon(
                                 FluentIcons.zoom,
-                                size: Theme.of(context).iconTheme.size,
-                                color: Theme.of(context).iconTheme.color,
+                                color: Theme.of(context).primaryIconTheme.color,
                               ),
-                            ),
+                              Padding(
+                                padding: EdgeInsets.all(15),
+                              ),
+                              Text(
+                                'Search',
+                                style: Theme.of(context).textTheme.subtitle,
+                              )
+                            ],
                           ),
+                          // TextField(
+                          //   decoration: InputDecoration(
+                          //     labelText: 'Search',
+                          //     labelStyle: Theme.of(context).textTheme.subtitle,
+                          //     disabledBorder: OutlineInputBorder(
+                          //       borderSide: BorderSide(
+                          //           width: 0,
+                          //           color: Theme.of(context).primaryColor),
+                          //     ),
+                          //     focusedBorder: OutlineInputBorder(
+                          //       borderSide: BorderSide(
+                          //           width: 0,
+                          //           color: Theme.of(context).primaryColor),
+                          //     ),
+                          //     enabledBorder: OutlineInputBorder(
+                          //       borderSide: BorderSide(
+                          //           width: 0,
+                          //           color: Theme.of(context).primaryColor),
+                          //     ),
+                          //     prefixIcon: Icon(
+                          //       FluentIcons.zoom,
+                          //       size: Theme.of(context).iconTheme.size,
+                          //       color: Theme.of(context).iconTheme.color,
+                          //     ),
+                          //   ),
+                          // ),
                         ),
                       ),
                     ),
