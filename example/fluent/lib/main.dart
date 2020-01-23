@@ -1,3 +1,4 @@
+import 'package:fluent/src/FluentChipView.dart';
 import 'package:fluent/src/FluentDrawer.dart';
 import 'package:fluent/src/FluentListItemView.dart';
 import 'package:fluent/src/FlutterBottomNavigation.dart';
@@ -152,6 +153,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => FluentCalender(),
+                      ),
+                    );
+                    break;
+                  case 10:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FluentChipView(),
                       ),
                     );
                     break;

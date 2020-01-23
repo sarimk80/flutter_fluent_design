@@ -116,69 +116,94 @@ abstract class FluentThemeData {
       scaffoldBackgroundColor: Colors.white,
       accentColor: accentColor,
       textTheme: TextTheme(
-          button: TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontFamily: 'packages/fluent_design/Segoe',
-              fontWeight: FontWeight.w500),
-          subhead: TextStyle(
-              color: Colors.black,
-              fontSize: 16,
-              fontFamily: 'packages/fluent_design/Segoe',
-              fontWeight: FontWeight.w500),
-          caption: TextStyle(
-            color: Colors.black,
-            fontSize: 12,
+        button: TextStyle(
+            color: Colors.white,
+            fontSize: 16,
             fontFamily: 'packages/fluent_design/Segoe',
-          ),
-          body1: TextStyle(
-              color: Colors.black,
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-              fontFamily: 'packages/fluent_design/Segoe'),
-          body2: TextStyle(
-              color: Colors.black,
-              fontSize: 14,
-              fontFamily: 'packages/fluent_design/Segoe'),
-          display1: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.w400,
-              fontSize: 25,
-              fontFamily: 'packages/fluent_design/Segoe'),
-          display2: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.w300,
-              fontSize: 20,
-              fontFamily: 'packages/fluent_design/Segoe'),
-          display3: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.w200,
-              fontSize: 30,
-              fontFamily: 'packages/fluent_design/Segoe'),
-          display4: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.w100,
-              fontSize: 45,
-              fontFamily: 'packages/fluent_design/Segoe'),
-          title: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-              fontFamily: 'packages/fluent_design/Segoe',
-              fontWeight: FontWeight.w500),
-          subtitle: TextStyle(
-              color: Colors.black,
-              fontSize: 15,
-              fontFamily: 'packages/fluent_design/Segoe',
-              fontWeight: FontWeight.w400),
-          headline: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.w300,
-              fontSize: 28,
-              fontFamily: 'packages/fluent_design/Segoe')),
+            fontWeight: FontWeight.w500),
+        subhead: TextStyle(
+            color: Colors.black,
+            fontSize: 16,
+            fontFamily: 'packages/fluent_design/Segoe',
+            fontWeight: FontWeight.w500),
+        caption: TextStyle(
+          color: Colors.black,
+          fontSize: 12,
+          fontFamily: 'packages/fluent_design/Segoe',
+        ),
+        body1: TextStyle(
+            color: Colors.black,
+            fontSize: 14,
+            fontWeight: FontWeight.w400,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        body2: TextStyle(
+            color: Colors.black,
+            fontSize: 14,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display1: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w400,
+            fontSize: 25,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display2: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w300,
+            fontSize: 20,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display3: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w200,
+            fontSize: 30,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        display4: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w100,
+            fontSize: 45,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        title: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+            fontFamily: 'packages/fluent_design/Segoe',
+            fontWeight: FontWeight.w500),
+        subtitle: TextStyle(
+            color: Colors.black,
+            fontSize: 15,
+            fontFamily: 'packages/fluent_design/Segoe',
+            fontWeight: FontWeight.w400),
+        headline: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w300,
+            fontSize: 28,
+            fontFamily: 'packages/fluent_design/Segoe'),
+      ),
       appBarTheme: AppBarTheme(
         elevation: 1,
         color: Colors.white,
         iconTheme: IconThemeData(color: Colors.black54, size: 24),
+      ),
+      chipTheme: ChipThemeData(
+        backgroundColor: Colors.grey[300],
+        brightness: Brightness.light,
+        disabledColor: Colors.grey[200].withOpacity(0.9),
+        labelPadding: EdgeInsets.only(left: 5,right: 5,top: 1,bottom: 1),
+        labelStyle: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w300,
+            fontSize: 15,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        padding: EdgeInsets.all(3),
+        secondaryLabelStyle: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w300,
+            fontSize: 10,
+            fontFamily: 'packages/fluent_design/Segoe'),
+        secondarySelectedColor: Colors.grey,
+        selectedColor: accentColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(0),
+          ),
+        ),
       ),
     );
     return lightData;
