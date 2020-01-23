@@ -7,35 +7,45 @@ class FluentChipView extends StatefulWidget {
 }
 
 class _FluentChipViewState extends State<FluentChipView> {
-  bool isSelected = false;
+  bool baicSelected = false;
+  bool errorSelected = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBarLayout(
         title: 'Chip View',
-        fluentBody: Center(
-          child: FilterChip(
-            showCheckmark: true,
-            avatar: Padding(
-              padding: const EdgeInsets.all(2.0),
-              child: AvatarView(
-                backgroundColor: Colors.green,
-                child: Text('SA',style: Theme.of(context).textTheme.caption,),
-                radius: 15,
+        fluentBody: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'In Progress.....',
+                style: Theme.of(context).textTheme.display1,
               ),
             ),
-            selected: isSelected,
-            label: Text('user name'),
-            labelStyle: Theme.of(context)
-                .chipTheme
-                .labelStyle
-                .copyWith(color: isSelected ? Colors.white : Colors.black),
-            onSelected: (bool value) {
-              setState(() {
-                isSelected = value;
-              });
-            },
-          ),
+            Center(
+              child: PersonaChipView(
+                status: Status.error,
+                isSelected: baicSelected,
+                onSelected: (bool value) {
+                  setState(() {
+                    baicSelected = value;
+                  });
+                },
+              ),
+            ),
+            Center(
+              child: PersonaChipView(
+                status: Status.basic,
+                isSelected: errorSelected,
+                onSelected: (bool value) {
+                  setState(() {
+                    errorSelected = value;
+                  });
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );

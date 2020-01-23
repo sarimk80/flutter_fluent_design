@@ -182,16 +182,16 @@ abstract class FluentThemeData {
         iconTheme: IconThemeData(color: Colors.black54, size: 24),
       ),
       chipTheme: ChipThemeData(
-        backgroundColor: Colors.grey[300],
+        backgroundColor: Colors.grey[400],
         brightness: Brightness.light,
         disabledColor: Colors.grey[200].withOpacity(0.9),
-        labelPadding: EdgeInsets.only(left: 5,right: 5,top: 1,bottom: 1),
+        labelPadding: EdgeInsets.only(left: 5,right: 5),
         labelStyle: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.w300,
             fontSize: 15,
             fontFamily: 'packages/fluent_design/Segoe'),
-        padding: EdgeInsets.all(3),
+        padding: EdgeInsets.all(0),
         secondaryLabelStyle: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.w300,

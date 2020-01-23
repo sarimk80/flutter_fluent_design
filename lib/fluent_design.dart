@@ -14,3 +14,4 @@ export 'bottom_app_bar_fab/FluentBottomBarFab.dart';
 export 'floating_action_button/FluentFloatingActionButton.dart';
 export 'bottom_app_bar_fab/BottomAppBarFabItems.dart';
 export 'fluent_theme/AccentColor.dart';
+export 'chip_view/PersonaChipView.dart';

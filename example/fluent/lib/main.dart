@@ -1,8 +1,10 @@
 import 'package:fluent/src/FluentChipView.dart';
 import 'package:fluent/src/FluentDrawer.dart';
 import 'package:fluent/src/FluentListItemView.dart';
+import 'package:fluent/src/FluentPopUpMenu.dart';
 import 'package:fluent/src/FlutterBottomNavigation.dart';
 import 'package:fluent/src/FlutterBottomSheet.dart';
+import 'package:fluent/src/PersonaListView.dart';
 import 'package:flutter/material.dart';
 import 'package:fluent_design/fluent_design.dart';
 
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: FluentThemeData.lightTheme(accentColor: AccentColor.greenAccent),
+      theme: FluentThemeData.blueTheme(),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -48,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
     'ListItemView',
     'PeoplePickerView',
     'PersonaChipView',
-    'PersonaView',
+    'PersonaListView',
     'PopupMenu',
     'Progress',
     'Snackbar',
@@ -161,6 +163,22 @@ class _MyHomePageState extends State<MyHomePage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => FluentChipView(),
+                      ),
+                    );
+                    break;
+                  case 11:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PersonaListView(),
+                      ),
+                    );
+                    break;
+                  case 12:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FluentPopUpMenu(),
                       ),
                     );
                     break;
