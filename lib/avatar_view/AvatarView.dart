@@ -20,16 +20,13 @@ class AvatarView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: CircleAvatar(
-        child: this.child,
-        backgroundColor: this.backgroundColor,
-        radius: this.radius,
-        backgroundImage: this.networkImage,
-        maxRadius: this.maxRadius,
-        minRadius: this.minRadius,
-      ),
+    return CircleAvatar(
+      child: this.child,
+      backgroundColor: this.backgroundColor,
+      radius: this.radius,
+      backgroundImage: this.networkImage,
+      maxRadius: this.maxRadius,
+      minRadius: this.minRadius,
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:fluent/src/FluentDrawer.dart';
+import 'package:fluent/src/FluentListItemView.dart';
 import 'package:fluent/src/FlutterBottomNavigation.dart';
 import 'package:fluent/src/FlutterBottomSheet.dart';
 import 'package:flutter/material.dart';
@@ -135,6 +136,22 @@ class _MyHomePageState extends State<MyHomePage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => FluentDrawer(),
+                      ),
+                    );
+                    break;
+                  case 8:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FluentListItemView(),
+                      ),
+                    );
+                    break;
+                  case 9:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FluentCalender(),
                       ),
                     );
                     break;
