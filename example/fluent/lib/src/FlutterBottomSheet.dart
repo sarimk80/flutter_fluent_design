@@ -23,8 +23,8 @@ class _FlutterBottomSheetState extends State<FlutterBottomSheet> {
                 style: Theme.of(context).textTheme.display3,
               ),
               BorderlessInput(
-                width: 200,
-                text: 'Show with Single Line Item',
+               
+                text: 'Show with Single Line Item Show with Single Line Item',
                 ontap: () {
                   FluentBottomSheet.bottomSheet(
                     context,
@@ -56,7 +56,7 @@ class _FlutterBottomSheetState extends State<FlutterBottomSheet> {
                 },
               ),
               Button(
-                width: 220,
+                
                 text: 'Show with Double Line Item',
                 ontap: () {
                   FluentBottomSheet.bottomSheet(context,
@@ -90,7 +90,7 @@ class _FlutterBottomSheetState extends State<FlutterBottomSheet> {
                 },
               ),
               BorderlessInput(
-                width: 230,
+                
                 text: 'Show with Single Line Header',
                 ontap: () {
                   FluentBottomSheet.bottomSheet(context,
@@ -129,7 +129,7 @@ class _FlutterBottomSheetState extends State<FlutterBottomSheet> {
                 },
               ),
               Button(
-                width: 320,
+               
                 text: 'Show with Double Line Header and Divider',
                 ontap: () {
                   FluentBottomSheet.bottomSheet(context,

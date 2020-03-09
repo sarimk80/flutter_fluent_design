@@ -14,15 +14,13 @@ class Button extends StatefulWidget {
   final String text;
   final Function() ontap;
   final bool disable;
-  final double width;
 
-  const Button(
-      {Key key,
-      @required this.text,
-      @required this.ontap,
-      this.disable = false,
-      this.width=90})
-      : super(key: key);
+  const Button({
+    Key key,
+    @required this.text,
+    @required this.ontap,
+    this.disable = false,
+  }) : super(key: key);
 
   @override
   _ButtonState createState() => _ButtonState();
@@ -33,20 +31,16 @@ class _ButtonState extends State<Button> {
   Widget build(BuildContext context) {
     return widget.disable
         ? Container(
+            padding: EdgeInsets.all(8),
             color: Colors.grey[300],
-            width: widget.width,
-            height: 40,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(
-                child: Text(
-                  widget.text,
-                  style: Theme.of(context)
-                      .textTheme
-                      .button
-                      .copyWith(color: Colors.black26),
-                ),
-              ),
+            //width: widget.width,
+            //height: 40,
+            child: Text(
+              widget.text,
+              style: Theme.of(context)
+                  .textTheme
+                  .button
+                  .copyWith(color: Colors.black26),
             ),
           )
         : Material(
@@ -55,13 +49,14 @@ class _ButtonState extends State<Button> {
               splashColor: Theme.of(context).accentColor,
               onTap: widget.ontap,
               child: Container(
-                width: widget.width,
-                height: 40,
-                child: Center(
-                  child: Text(
-                    widget.text,
-                    style: Theme.of(context).textTheme.button,
-                  ),
+                padding: EdgeInsets.all(8),
+                constraints:
+                    BoxConstraints(maxWidth: MediaQuery.of(context).size.width),
+                // width: widget.width,
+                //height: 40,
+                child: Text(
+                  widget.text,
+                  style: Theme.of(context).textTheme.button,
                 ),
               ),
             ),

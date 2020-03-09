@@ -18,7 +18,7 @@ class _FluentDrawerState extends State<FluentDrawer> {
             direction: Axis.vertical,
             children: <Widget>[
               Button(
-                width: 120,
+              
                 text: 'Show Drawer',
                 ontap: () {
                   FluentBottomSheet.bottomSheet(context,

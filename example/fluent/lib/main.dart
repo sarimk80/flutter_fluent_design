@@ -1,17 +1,18 @@
-import 'package:fluent/src/FluentChipView.dart';
-import 'package:fluent/src/FluentDrawer.dart';
-import 'package:fluent/src/FluentListItemView.dart';
-import 'package:fluent/src/FluentPopUpMenu.dart';
-import 'package:fluent/src/FlutterBottomNavigation.dart';
-import 'package:fluent/src/FlutterBottomSheet.dart';
-import 'package:fluent/src/PersonaListView.dart';
 import 'package:flutter/material.dart';
 import 'package:fluent_design/fluent_design.dart';
 
 import 'src/FluentAppBar.dart';
+import 'src/FluentChipView.dart';
+import 'src/FluentDrawer.dart';
+import 'src/FluentListItemView.dart';
+import 'src/FluentPopUpMenu.dart';
 import 'src/FlutterAvatarView.dart';
+import 'src/FlutterBottomNavigation.dart';
+import 'src/FlutterBottomSheet.dart';
 import 'src/FlutterButton.dart';
 import 'src/FluentCalender.dart';
+import 'src/PersonaListView.dart';
+import 'src/FluentProgress.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: FluentThemeData.blueTheme(),
+      theme: FluentThemeData.lightTheme(accentColor: AccentColor.orangeAccent),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -182,6 +183,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     );
                     break;
+                  case 13:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FluentProgress(),
+                      ),
+                    );
                 }
               },
               title: Text(
@@ -193,23 +201,6 @@ class _MyHomePageState extends State<MyHomePage> {
           itemCount: titles.length,
         ),
       ),
-      // bottomNavigationBar: BottomNavigation(
-      //   currentIndex: 0,
-      //   items: [
-      //     BottomNavigationBarItem(
-      //       icon: Icon(FluentIcons.home),
-      //       title: Text('Home'),
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(FluentIcons.guest_user),
-      //       title: Text('User'),
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(FluentIcons.settings),
-      //       title: Text('Setting'),
-      //     ),
-      //   ],
-      // ),
     );
   }
 }
