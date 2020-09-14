@@ -8,9 +8,15 @@ class FluentProgress extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBarLayout(
-        title: 'Progress',
-        fluentBody: Center(child: CircularProgressIndicator()),
-      ),
+          title: 'Progress',
+          fluentBody: Column(
+            children: [
+              Text(
+                'Circular Progress',
+                style: Theme.of(context).textTheme.display2,
+              )
+            ],
+          )),
     );
   }
 }

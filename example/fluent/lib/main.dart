@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Sonar cubeDemo',
       debugShowCheckedModeBanner: false,
       theme: FluentThemeData.lightTheme(accentColor: AccentColor.orangeAccent),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
